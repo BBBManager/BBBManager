@@ -100,7 +100,7 @@ Load default data (user admin, pass bbbmanager):
     cd /var/bbbmanager/web-api/
     rsync -av conf-template/php/ private/application/configs/
     
-    If you used a different user and password for database, you must to change it in file private/application/configs/application.ini
+If you used a different user and password for database, you must to change it in file private/application/configs/application.ini
 
 ### Create PHP config files (UI)
     echo "10.30.10.101" > /var/bbbmanager/parameters/external_hostname
