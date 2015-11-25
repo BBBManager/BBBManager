@@ -20,6 +20,7 @@ Replace the contents of the file `/etc/apache2/ports.conf` to the following line
     Listen 127.0.0.1:82
 
 Enable mod_rewrite
+
     sudo ln /etc/apache2/mods-available/rewrite.load /etc/apache2/mods-enabled/ -s
 
 ### Restart apache and nginx
@@ -62,7 +63,6 @@ Enable mod_rewrite
     sudo cp /var/bbbmanager/web-ui/conf-template/apache2/bbbmanager-ui.conf /etc/apache2/sites-available/
     sudo ln /etc/apache2/sites-available/bbbmanager-api.conf /etc/apache2/sites-enabled/ -s
     sudo ln /etc/apache2/sites-available/bbbmanager-ui.conf /etc/apache2/sites-enabled/ -s
-    sudo ln /etc/apache2/mods-available/rewrite.load /etc/apache2/mods-enabled/ -s
 
 ### Install and load initial database
 
