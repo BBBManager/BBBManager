@@ -31,7 +31,8 @@ Enable mod_rewrite
 ### Get the source code
 
     sudo mkdir /var/bbbmanager/
-    sudo chown `id -un`.www-data /var/bbbmanager/
+    sudo mkdir /var/bbbmanager/parameters/
+    sudo chown `id -un`.www-data /var/bbbmanager/ -R
     
     cd /var/bbbmanager/
     git clone https://github.com/BBBManager/web-api.git
@@ -89,7 +90,17 @@ Create schema:
 Load default data (user admin, pass bbbmanager):
     cat /var/bbbmanager/web-api/conf-template/db/data.sql | mysql -ubbbmanager -pbbbmanagerpwd bbbmanager
 
-### Create PHP config files (api)
+### Create PHP config files (API)
     cd /var/bbbmanager/web-api/
     rsync -av conf-template/php/ private/application/configs/
+    
+    If you used a different user and password for database, you must to change it in file private/application/configs/application.ini
+
+### Create PHP config files (UI)
+    echo "10.30.10.101" > /var/bbbmanager/parameters/external_hostname
+    
+    cd /var/bbbmanager/web-ui/
+    cat conf-template/php/application.ini  | sed 's/<<BBBMANAGER_HOSTNAME>>/'`cat /var/bbbmanager/parameters/external_hostname | head -n 1 | xargs -n 1 echo -n `'/g' > private/application/configs/application.ini
+
+### Configure nginx to route traffic to BBBManager internal ports (81 and 82)
     
