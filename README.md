@@ -103,10 +103,21 @@ Load default data (user admin, pass bbbmanager):
 If you used a different user and password for database, you must to change it in file private/application/configs/application.ini
 
 ### Create PHP config files (UI)
-    echo "10.30.10.101" > /var/bbbmanager/parameters/external_hostname
+    echo "192.168.0.5" > /var/bbbmanager/parameters/external_hostname
     
     cd /var/bbbmanager/web-ui/
     cat conf-template/php/application.ini  | sed 's/<<BBBMANAGER_HOSTNAME>>/'`cat /var/bbbmanager/parameters/external_hostname | head -n 1 | xargs -n 1 echo -n `'/g' > private/application/configs/application.ini
 
-### Configure nginx to route traffic to BBBManager internal ports (81 and 82)
+### Configure nginx to route traffic to BBBManager - Option A (Without BigBlueButton)
+    sudo rm /etc/nginx/sites-enabled/default
+    sudo cp /var/bbbmanager/web-ui/conf-template/nginx/bbbmanager-web-ui.alone /etc/nginx/sites-available/
+    sudo ln /etc/nginx/sites-available/bbbmanager-web-ui.alone /etc/nginx/sites-enabled/ -s
+    sudo service nginx restart
+
+Now you can open your browser in the external hostname (in this example 192.168.0.5)
+    http://192.168.0.5/
+    User: admin
+    Password: bbbmanager
+
+### Configure nginx to route traffic to BBBManager - Option B (Without BigBlueButton)
     
