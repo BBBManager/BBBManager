@@ -60,8 +60,9 @@ Enable mod_rewrite
 
     sudo cp /var/bbbmanager/web-api/conf-template/apache2/bbbmanager-api.conf /etc/apache2/sites-available/
     sudo cp /var/bbbmanager/web-ui/conf-template/apache2/bbbmanager-ui.conf /etc/apache2/sites-available/
-    sudo ln -s /etc/apache2/sites-available/bbbmanager-api.conf /etc/apache2/sites-enabled/ -s
-    sudo ln -s /etc/apache2/sites-available/bbbmanager-ui.conf /etc/apache2/sites-enabled/ -s
+    sudo ln /etc/apache2/sites-available/bbbmanager-api.conf /etc/apache2/sites-enabled/ -s
+    sudo ln /etc/apache2/sites-available/bbbmanager-ui.conf /etc/apache2/sites-enabled/ -s
+    sudo ln /etc/apache2/mods-available/rewrite.load /etc/apache2/mods-enabled/ -s
 
 ### Install and load initial database
 
