@@ -23,17 +23,19 @@ Replace the contents of the file `/etc/apache2/ports.conf` to the following line
     
 ### Step 4: Get the source code
 
-    mkdir /var/bbbmanager/
+    sudo mkdir /var/bbbmanager/
+    sudo chown `id -un`.www-data /var/bbbmanager/
+    
     cd /var/bbbmanager/
-    sudo git clone https://github.com/BBBManager/web-api.git
-    sudo git clone https://github.com/BBBManager/web-ui.git
+    git clone https://github.com/BBBManager/web-api.git
+    git clone https://github.com/BBBManager/web-ui.git
 
 ### Step 5 (Optional): Go to a specific version
 
     cd /var/bbbmanager/web-ui/
-    sudo git checkout v1.0
+    git checkout v1.0
     cd /var/bbbmanager/web-api/
-    sudo git checkout v1.0
+    git checkout v1.0
     
 ### Step 6: Configure permissions
 
