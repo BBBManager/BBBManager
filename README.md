@@ -63,6 +63,7 @@ Enable mod_rewrite
     sudo cp /var/bbbmanager/web-ui/conf-template/apache2/bbbmanager-ui.conf /etc/apache2/sites-available/
     sudo ln /etc/apache2/sites-available/bbbmanager-api.conf /etc/apache2/sites-enabled/ -s
     sudo ln /etc/apache2/sites-available/bbbmanager-ui.conf /etc/apache2/sites-enabled/ -s
+    sudo service apache2 restart
 
 ### Install and load initial database
 
@@ -107,6 +108,7 @@ If you used a different user and password for database, you must to change it in
     echo "192.168.0.5" > /var/bbbmanager/parameters/external_hostname
     
     cd /var/bbbmanager/web-ui/
+    rsync -av conf-template/php/ private/application/configs/
     cat conf-template/php/application.ini  | sed 's/<<BBBMANAGER_HOSTNAME>>/'`cat /var/bbbmanager/parameters/external_hostname | head -n 1 | xargs -n 1 echo -n `'/g' > private/application/configs/application.ini
 
 ### Configure nginx to route traffic to BBBManager - Option A (Without BigBlueButton)
