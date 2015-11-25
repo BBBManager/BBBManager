@@ -116,6 +116,7 @@ If you used a different user and password for database, you must to change it in
     sudo service nginx restart
 
 Now you can open your browser in the external hostname (in this example 192.168.0.5)
+
     http://192.168.0.5/
     User: admin
     Password: bbbmanager
