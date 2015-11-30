@@ -136,7 +136,7 @@ If you executed the previous step, you need to remove the following files:
 
 Install the BigBlueButton in your server:
 
-    Instructions available at: http://docs.bigbluebutton.org/1.0/10install.html#installing-bigbluebutton-1-0-beta
+Instructions available at: http://docs.bigbluebutton.org/1.0/10install.html#installing-bigbluebutton-1-0-beta
 
 Edit file /etc/nginx/sites-available/bigbluebutton and replace:
 
