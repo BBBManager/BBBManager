@@ -128,5 +128,37 @@ Now you can open your browser in the external hostname (in this example 192.168.
 
 *Replace 192.168.0.5 with your external ip.*
 
-### Configure nginx to route traffic to BBBManager - Option B (Without BigBlueButton)
-    
+### Configure nginx to route traffic to BBBManager - Option B (With BigBlueButton)
+If you executed the previous step, you need to remove the following files:
+
+        sudo rm -f /etc/nginx/sites-enabled/bbbmanager-web-ui.alone
+	sudo rm -f /etc/nginx/sites-available/bbbmanager-web-ui.alone
+
+Edit file /etc/nginx/sites-available/bigbluebutton and replace:
+
+Replace the following text (original):
+
+	# BigBlueButton landing page.
+        location / {
+          root   /var/www/bigbluebutton-default;
+          index  index.html index.htm;
+          expires 1m;
+        }
+
+by the following text (commented):
+
+	# BigBlueButton landing page.
+        #location / {
+        #  root   /var/www/bigbluebutton-default;
+        #  index  index.html index.htm;
+        #  expires 1m;
+        #}
+
+Execute the following command to expose BBBManager in nginx:
+
+    sudo cp /var/bbbmanager/web-ui/conf-template/nginx/bbbmanager-web-ui.nginx /etc/bigbluebutton/nginx/
+
+Do a clean restart of BBB:
+
+     sudo bbb-conf --clean
+
