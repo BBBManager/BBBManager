@@ -137,6 +137,10 @@ If you executed the previous step, you need to remove the following files:
 
 Install the BigBlueButton in your server: http://docs.bigbluebutton.org/1.0/10install.html#installing-bigbluebutton-1-0-beta
 
+Generate a key for the BBBManager Agent:
+
+    uuidgen > /var/bbbmanager/parameters/agent_key
+
 Edit file /etc/nginx/sites-available/bigbluebutton and replace:
 
 Replace the following text (original):
@@ -164,4 +168,19 @@ Execute the following command to expose BBBManager in nginx:
 Do a clean restart of BBB:
 
     sudo bbb-conf --clean
+
+
+
+## Upgrade to new version
+
+### How to upgrade
+    TODO: describe how to upgrade
+
+### After you upgrade
+After you update, you need to clear all sessions and cache, to avoid inconsistency, using the following commands:
+
+    rm -f /var/bbbmanager/web-ui/private/tmp/session/sess_*
+    rm -f /var/bbbmanager/web-api/private/tmp/session/sess_*
+    rm -f /var/bbbmanager/web-ui/private/tmp/cache/*
+    rm -f /var/bbbmanager/web-api/private/tmp/cache/*
 
