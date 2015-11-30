@@ -53,6 +53,7 @@ Enable mod_rewrite
 
     chmod 775 /var/bbbmanager/web-ui/private/tmp/cache/
     chmod 775 /var/bbbmanager/web-ui/private/tmp/session/
+    chmod 775 /var/bbbmanager/web-ui/private/tmp/log/
 
     chmod 775 /var/bbbmanager/web-api/private/tmp/cache/
     chmod 775 /var/bbbmanager/web-api/private/tmp/session/
