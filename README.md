@@ -8,7 +8,7 @@ Opensource BigBlueButton room manager
 
     sudo apt-get update
     sudo apt-get dist-upgrade
-    sudo apt-get install nginx apache2 php5 php5-mysql php5-ldap php5-gd git lynx-cur wget
+    sudo apt-get install nginx apache2 php5 php5-mysql php5-ldap php5-gd git lynx-cur wget php5-curl
     sudo reboot
 
 ### Configure apache
@@ -51,12 +51,18 @@ Enable mod_rewrite
     sudo chown `id -un`.www-data /var/bbbmanager/web-api/ -R
     sudo chown `id -un`.www-data /var/bbbmanager/web-ui/ -R
 
-    chmod 775 /var/bbbmanager/web-ui/private/tmp/cache/
-    chmod 775 /var/bbbmanager/web-ui/private/tmp/session/
-    chmod 775 /var/bbbmanager/web-ui/private/tmp/log/
+    chmod 775 /var/bbbmanager/web-ui/private/tmp/cache/ -R
+    chmod 775 /var/bbbmanager/web-ui/private/tmp/session/ -R
+    chmod 775 /var/bbbmanager/web-ui/private/tmp/log/ -R
+    chmod 775 /var/bbbmanager/web-ui/httpdocs/tmp/ -R
+    chmod 775 /var/bbbmanager/web-ui/httpdocs/tmp/captcha/ -R
+    
+    chmod 775 /var/bbbmanager/web-api/private/tmp/cache/ -R
+    chmod 775 /var/bbbmanager/web-api/private/tmp/session/ -R
+    chmod 775 /var/bbbmanager/web-api/httpdocs/public/ -R
+    chmod 775 /var/bbbmanager/web-api/httpdocs/public/export/ -R
+    chmod 775 /var/bbbmanager/web-api/httpdocs/public/export/rooms-audience/ -R
 
-    chmod 775 /var/bbbmanager/web-api/private/tmp/cache/
-    chmod 775 /var/bbbmanager/web-api/private/tmp/session/
 
 ### Configure virtualhosts
 
