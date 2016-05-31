@@ -93,7 +93,7 @@ In this example we are using user bbbmanager and password bbbmanagerpwd. You sho
 Create a user and database for bbbmanager on mysql:
 
     echo "create user bbbmanager identified by 'bbbmanagerpwd';" | mysql -uroot -prootbbb
-    echo "create database bbbmanager;" | mysql -uroot -prootbbb
+    echo "create database bbbmanager DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;" | mysql -uroot -prootbbb
     echo "grant all privileges on bbbmanager.* to bbbmanager;" | mysql -uroot -prootbbb
     echo "flush privileges;" | mysql -uroot -prootbbb
 
