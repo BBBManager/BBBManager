@@ -172,8 +172,9 @@ Execute the following command to expose BBBManager in nginx:
     sudo cp /var/bbbmanager/web-ui/conf-template/nginx/bbbmanager-web-ui.nginx /etc/bigbluebutton/nginx/
 
 Execute the following command to download the BBBManager agent:
-    wget "https://github.com/BBBManager/standalone-agent/raw/master/dist/release/bbbmanager-standalone-agent.war" -O /var/lib/tomcat7/webapps/bbbmanager-standalone-agent.war
-
+    
+    `sudo wget "https://github.com/BBBManager/standalone-agent/raw/master/dist/release/bbbmanager-standalone-agent.war" -O /var/lib/tomcat7/webapps/bbbmanager-standalone-agent.war`
+    
 Do a clean restart of BBB:
 
     sudo bbb-conf --clean
