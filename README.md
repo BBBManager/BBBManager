@@ -145,7 +145,7 @@ Install the BigBlueButton in your server: http://docs.bigbluebutton.org/1.0/10in
 
 Generate a key for the BBBManager Agent:
 
-    uuidgen > /var/bbbmanager/parameters/agent_key
+    uuidgen | sudo tee /var/bbbmanager/parameters/agent_key
 
 Edit file /etc/nginx/sites-available/bigbluebutton and replace:
 
