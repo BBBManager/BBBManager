@@ -8,7 +8,7 @@ Opensource BigBlueButton room manager
 
     sudo apt-get update
     sudo apt-get dist-upgrade
-    sudo apt-get install nginx apache2 php php-mysql php-ldap php-gd git lynx-cur wget php-curl
+    sudo apt-get install nginx apache2 php php-mysql php-ldap php-gd git lynx-cur wget php-curl libapache2-mod-php
     sudo reboot
 
 ### Configure apache
