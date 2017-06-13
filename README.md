@@ -76,7 +76,7 @@ Enable mod_rewrite
 
 The following command will install MySQL server and will ask a root password for you. On this example we will use password rootbbb
 
-    sudo apt-get install mysql-server-5.6 mysql-client-core-5.6
+    sudo apt-get install mysql-server mysql-client
     
 Verify if server is running using the following command
 
