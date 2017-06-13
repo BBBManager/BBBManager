@@ -2,13 +2,13 @@
 
 Opensource BigBlueButton room manager
 
-## Setup (Ubuntu 14.04)
+## Setup (Ubuntu 16.04)
 
 ### Update your system and install components
 
     sudo apt-get update
     sudo apt-get dist-upgrade
-    sudo apt-get install nginx apache2 php5 php5-mysql php5-ldap php5-gd git lynx-cur wget php5-curl
+    sudo apt-get install nginx apache2 php php-mysql php-ldap php-gd git lynx-cur wget php-curl
     sudo reboot
 
 ### Configure apache
